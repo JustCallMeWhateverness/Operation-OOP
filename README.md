@@ -1,145 +1,149 @@
-# Individuell Inlämningsuppgift – OOP, Arv/Komposition & Enklare Algoritmer
+# Individual Assignment – OOP, Inheritance/Composition & Basic Algorithms
+**Overview:**
+You will be provided with a pre-existing API project that includes three endpoints for managing bonsai trees. Your task is to create a class library and integrate it with the API by:
+•	Expanding the logic (adding multiple classes, using inheritance or composition from the existing Bonsai class, or creating entirely new classes and interfaces such as IEntity).
+•	Implementing a simple algorithmic function (search, sorting, filtering, or a basic calculation).
+•	Adding new endpoints to the API that use your logic.
+This assignment aims to assess your skills in:
+•	Algorithmic thinking and logical approaches to designing algorithms.
+•	Analysis and structuring of applications.
+•	Object-oriented programming techniques (inheritance, composition, encapsulation, etc.).
 
-**Översikt:**  
-Du får ett färdigt API-projekt som grund, där tre endpoints finns klara för hantering av bonsaiträd. Din uppgift är att skapa ett klassbibliotek och integrera detta med API:t genom att:
-
-1. **Utöka logiken** (flera klasser, använd arv eller komposition från den existerande Bonsai-klassen eller skapa helt egna klasser och interface(exempelvis `IEntity`).  
-2. **Implementera enkel algoritmisk funktion** (sök, sortering, filtrering eller enklare beräkning).  
-3. **Lägga till nya endpoints** i API:t som använder din logik.  
-
-Uppgiften är tänkt att visa din förmåga inom:  
-- **Algoritmiskt tankesätt och logiska tillvägagångssätt vid utformande av algoritmer** och hur du strukturerar logik.  
-- **Analys och strukturering av applikationer**.  
-- **Objektorienterad programmeringsteknik och begrepp** (arv, komposition, inkapsling, etc.).  
-
-För att vara exakt så är detta kursmålen:
-- 1, Begrepp inom objektorienterad programmering
-- 2, Algoritmiskt tankesätt och logiska tillvägagångssätt vid utformande av algoritmer
-- 4, Analysering och strukturering av applikationer
-- 5, Strukturerad och objektorienterad programmeringsteknik vid
-
-## Steg-för-steg-instruktioner
-
-1. **Hämta det befintliga API-projektet**  
-   - Starta med den kod du fått, testa att dina tre Bonsai-endpoints fungerar:
-     - GET /api/bonsai - Hämtar alla bonsaiträd
-     - GET /api/bonsai/{id} - Hämtar ett specifikt bonsaiträd
-     - POST /api/bonsai - Skapar ett nytt bonsaiträd
-   - Bekanta dig med hur projektet är uppdelat (Program.cs, Bonsai.cs, endpoints, etc.).
-
-2. **Skapa/utöka klassbiblioteket**  
-   - Utgå från den existerande Bonsai-klassen i `OperationOOP.Core/Models/Bonsai.cs`.
-   - Lägg till minst tre nya klasser i klassbiblioteket som kompletterar Bonsai-hanteringen (eller skapa en helt ny idé).
-   - Använd **arv** eller **komposition** från Bonsai-klassen eller skapa en abstrakt klass (t.ex. `Plant`) och ett gemensamt Interface(exempelvis `IEntity`).  
-   - I klasserna ska du:  
-     - Använda **inkapsling** (public/private/protected).  
-     - Fundera på **designprinciper** (t.ex. “Single 
-     Responsibility”, “Komposition över arv när det passar” 
-     etc.).  
-
-3. **Implementera en eller flera metoder** med enklare algoritmik  
-   - Exempel:  
-     - Filtrera en lista på produkter för att hitta de med lågt lager.  
-     - Sök bland djur på zoo efter namn eller art.  
-     - Beräkna en totalsumma eller sortera objekt efter någonting (pris, antal, namn).  
-   - Metoden ska sedan anropas från API:t.  
-
-4. **Lägg till endpoints i API**  
-   - Se till att ha minst 2–3 nya endpoints, t.ex.:  
-     - GET för att lista eller filtrera objekt.  
-     - POST för att skapa ett nytt objekt i din in-memory-samling.  
-   - Endpoint-koden ska anropa klassbibliotekets logik.  
-   - Använd gärna **Dependency Injection** om du vill (ej krav, men bra övning).  
-
-5. **Testa och demonstrera**  
-   - Du behöver inte skriva enhetstester om det inte efterfrågas, men testa att dina endpoints fungerar – till exempel i en webbläsare, Postman, eller via inbyggda Swagger-sidor.  
-   - Säkerställ att dina algoritmiska metoder faktiskt fungerar (t.ex. att du får rätt filtrering eller sortering).  
-
-## Exempel på idéer
-
-1. **Recept-hantering**
-   - Klasser: Recipe (bas), Ingredient, CookingStep
-   - Algoritmer: 
-     - Filtrera recept baserat på tillagningstid eller svårighetsgrad
-     - Sök recept som innehåller specifika ingredienser
-     - Beräkna portioner och skala om ingrediensmängder
-   - Möjliga endpoints: GET /recipes, GET /recipes/search, POST /recipes
-
-2. **Träningspass-system**
-   - Klasser: Workout (bas), CardioWorkout, StrengthWorkout, Exercise
-   - Algoritmer:
-     - Beräkna total träningstid och kaloriförbränning
-     - Filtrera övningar efter muskelgrupp
-     - Sortera pass efter intensitetsnivå
-   - Möjliga endpoints: GET /workouts, GET /workouts/muscle-group/{group}, POST /workouts
-
-3. **Spelkaraktärs-hantering**
-   - Klasser: Character (bas), Warrior, Mage, Equipment, Skill
-   - Algoritmer:
-     - Beräkna total skada eller försvar
-     - Filtrera karaktärer efter klass eller level
-     - Sortera utrustning efter värde eller sällsynthet
-   - Möjliga endpoints: GET /characters, GET /characters/class/{class}, POST /characters
-
-4. **Växt-hantering**
-   - Klasser: Plant (bas), IndoorPlant, OutdoorPlant, WateringSchedule
-   - Algoritmer:
-     - Beräkna nästa vattningsdatum
-     - Filtrera växter efter skötselsvårighet
-     - Sortera efter hälsostatus eller vattenbehov
-   - Möjliga endpoints: GET /plants, GET /plants/care-level/{level}, POST /plants
-
-5. **Film-bibliotek**
-   - Klasser: Movie (bas), Review, Director, Genre
-   - Algoritmer:
-     - Beräkna genomsnittsbetyg
-     - Filtrera filmer efter genre eller årtal
-     - Sortera efter betyg eller utgivningsdatum
-   - Möjliga endpoints: GET /movies, GET /movies/genre/{genre}, POST /movies
-
-Varje exempel ger möjlighet att demonstrera:
-- Arv och/eller komposition
-- Inkapsling av data
-- Algoritmisk behandling av data (sökning, filtrering, sortering)
-- REST API-design
-- Dependency Injection (valfritt)
-
-## Redovisning
-
-1. **Kod**  
-   - Lämna in din lösning (länk till GitHub-repo).  
-   - Kommentera gärna koden kortfattat för att visa ditt tänkande.  
-
-2. **Kort videogenomgång** (valfritt format)  
-   - Förklara hur du löst uppgiften, i en 5–10 minuters video där du delar skärmen och diskuterar koden.  
-   - Beskriv vilka klasser du skapade, om du använde arv/komposition & varför du valde detta.  
-   - Visa hur din algoritm fungerar (ex. "Så här filtreras produkterna").  
-   - Resonera kring eventuella designprinciper du använt (t.ex. "komposition över arv").  
-
-## Tips för högre nivå (VG-kriterier)
-Enligt kursmålen så ska du:
-- Självständigt analysera och kombinera olika begrepp inom objektorienterad programmering
-- Se samband och värdera alternativa lösningar vid val av programmeringsteknik
-- Självständigt ta fram och utvärdera information i förkodade lösningar i ramverk ochklassbibliotek
-
-
-- **Självständigt analysera och kombinera OOP-begrepp**  
-  - Diskutera t.ex. polymorfism, arv, interface, abstrakta klasser, etc.  
-- **Värdera alternativ**  
-  - Varför valde du just arv i stället för komposition (eller tvärtom)?  
-  - Vilka andra designmönster eller principer skulle kunna vara relevanta?  
-- **Förkodade lösningar i ramverk/klassbibliotek**  
-  - Utvärdera hur .NET (t.ex. Minimal API, DI, Collections, LINQ) hjälper din lösning.  
-  - Hur hade du kunnat använda designmönster som Repository eller Strategy? (inte nödvändigt)  
-
-## Hjälp för dig som vill göra mer
-
-- **Utöka ditt klassbibliotek** med fler klasser eller extra funktioner (t.ex. hantering av kategorier, relaterade objekt, etc.).  
-- **Implementera designpriciper** tydligare (SOLID, DIP/IoC, etc.).  
-- **Ökad algoritmisk komplexitet** (mer avancerad beräkning/validering).  
-- **Fler endpoints** eller integration med en extern fil/databas (om tid och kunskap finns).  
-
----
-
-**Lycka till!**  
-Den här uppgiften är perfekt för att träna på hur man använder objektorienterad design i praktiken, hur man skiljer på klassbibliotek och API, och hur man skapar enkla algoritmer för filtrering/sök/beräkning. Var inte rädd att fråga om du kör fast eller vill bolla designfrågor!
+**Course Objectives Covered**
+1.	Algorithmic thinking and logical approaches to designing algorithms.
+2.	Analysis and structuring of applications.
+3.	Structured and object-oriented programming techniques.
+________________________________________
+## Step-by-Step Instructions
+1. Retrieve the Existing API Project
+Start with the provided code and verify that the three Bonsai endpoints function correctly:
+•	GET /api/bonsai - Retrieves all bonsai trees.
+•	GET /api/bonsai/{id} - Retrieves a specific bonsai tree.
+•	POST /api/bonsai - Creates a new bonsai tree.
+Familiarize yourself with the project structure (Program.cs, Bonsai.cs, endpoints, etc.).
+________________________________________
+2. **Create/Extend the Class Library**
+•	Base your work on the existing Bonsai class in OperationOOP.Core/Models/Bonsai.cs.
+•	Add at least two new classes to the class library to enhance Bonsai management.
+•	Use inheritance or composition from the Bonsai class or create a common interface (e.g., IEntity).
+•	Ensure your classes:
+o	Use encapsulation (public/private/protected).
+o	Follow design principles (e.g., "Single Responsibility", "Composition over inheritance" when appropriate).
+________________________________________
+3. **Implement an Algorithmic Method**
+Add at least one method with simple algorithmic logic. Example implementations:
+•	Filter a list of products to find those with low stock.
+•	Search for an animal in a zoo by name or species.
+•	Calculate a total sum or sort objects by price, quantity, or name.
+This method should be accessible via an API endpoint.
+________________________________________
+4. **Add New API Endpoints**
+Ensure you add at least 2–3 new endpoints, such as:
+•	GET for listing or filtering objects.
+•	POST for adding a new object to your in-memory collection.
+Your endpoint logic should interact with your class library. Using Dependency Injection (DI) is optional but encouraged.
+________________________________________
+5. **Test and Demonstrate**
+•	You don’t need to write unit tests (unless required), but test your endpoints using a web browser, Postman, or built-in Swagger pages.
+•	Verify that your algorithmic methods work correctly (e.g., checking if filtering or sorting returns the correct results).
+________________________________________
+## Example Ideas
+Here are some example domains for inspiration:
+**Recipe Management**
+•	Classes: Recipe (base), Ingredient, CookingStep
+•	Algorithms:
+o	Filter recipes based on cooking time or difficulty.
+o	Search for recipes that contain specific ingredients.
+o	Scale ingredient amounts for different portions.
+•	Endpoints:
+o	GET /recipes
+o	GET /recipes/search
+o	POST /recipes
+________________________________________
+**Workout System**
+•	Classes: Workout (base), CardioWorkout, StrengthWorkout, Exercise
+•	Algorithms:
+o	Calculate total workout duration and calorie burn.
+o	Filter exercises by muscle group.
+o	Sort workouts by intensity level.
+•	Endpoints:
+o	GET /workouts
+o	GET /workouts/muscle-group/{group}
+o	POST /workouts
+________________________________________
+**Game Character Management**
+•	Classes: Character (base), Warrior, Mage, Equipment, Skill
+•	Algorithms:
+o	Calculate total damage or defense.
+o	Filter characters by class or level.
+o	Sort equipment by value or rarity.
+•	Endpoints:
+o	GET /characters
+o	GET /characters/class/{class}
+o	POST /characters
+________________________________________
+**Plant Management**
+•	Classes: Plant (base), IndoorPlant, OutdoorPlant, WateringSchedule
+•	Algorithms:
+o	Calculate the next watering date.
+o	Filter plants by care difficulty.
+o	Sort by health status or water requirements.
+•	Endpoints:
+o	GET /plants
+o	GET /plants/care-level/{level}
+o	POST /plants
+________________________________________
+**Movie Library**
+•	Classes: Movie (base), Review, Director, Genre
+•	Algorithms:
+o	Calculate the average rating.
+o	Filter movies by genre or release year.
+o	Sort by rating or release date.
+•	Endpoints:
+o	GET /movies
+o	GET /movies/genre/{genre}
+o	POST /movies
+________________________________________
+Key Concepts Demonstrated
+Each of these examples allows you to showcase:
+•	Inheritance and/or Composition
+•	Encapsulation of Data
+•	Algorithmic Data Processing (searching, filtering, sorting)
+•	REST API Design
+•	(Optional) Dependency Injection
+________________________________________
+Final Submission
+1. **Code Submission**
+Submit your solution via a GitHub repository link.
+•	Comment your code to explain your thought process.
+2. **Short Video Presentation** (5–10 min)
+Create a short video explaining your solution.
+•	Describe your classes and whether you used inheritance/composition (and why).
+•	Demonstrate your algorithm (e.g., "Here's how the filtering works").
+•	Discuss design principles you applied (e.g., "I chose composition over inheritance because...").
+________________________________________
+## Higher-Level Criteria (For VG-Grade)
+According to course objectives, you should:
+1.	Independently analyze and combine OOP concepts
+2.	Evaluate alternative solutions when selecting programming techniques
+3.	Utilize pre-existing solutions in frameworks and class libraries
+4.	Discuss OOP concepts such as polymorphism, inheritance, interfaces, abstract classes, etc.
+5.	Evaluate different design choices
+o	Why use inheritance instead of composition (or vice versa)?
+o	What other design patterns/principles might be relevant?
+6.	Pre-Built Solutions in .NET
+o	Evaluate how .NET features (e.g., Minimal API, DI, Collections, LINQ) helped your implementation.
+o	Could you use design patterns like Repository or Strategy?
+________________________________________
+## Going Beyond
+If you want to challenge yourself, you can:
+•	Expand your class library with additional classes or extra functionality (e.g., categories, related objects).
+•	Implement design principles more rigorously (SOLID, DIP/IoC, etc.).
+•	Add more complex algorithms (e.g., advanced calculations, data validation).
+•	Introduce additional endpoints or integrate an external file/database (if time and knowledge allow).
+________________________________________
+**Good Luck!**
+This assignment is a great opportunity to practice:
+•	Object-oriented design in a real-world scenario.
+•	Separating class libraries from API logic.
+•	Implementing basic algorithms for filtering/searching/calculations.
