@@ -19,7 +19,8 @@ public class GetCharacter : IEndpoint
     private static Response Handle([AsParameters] Request request, IDatabase db)
     {
         var character = db.Characters.Find(character => character.Id == request.Id);
-        //Check for if the chracter is null
+
+        //Check for if the character is null
         if (character == null)
         {
             //If character is not found
