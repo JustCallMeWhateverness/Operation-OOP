@@ -15,7 +15,7 @@ This assignment aims to assess your skills in:
 3.	Structured and object-oriented programming techniques.
 ________________________________________
 ## Step-by-Step Instructions
-1. Retrieve the Existing API Project
+1. **Retrieve the Existing API Project**
 Start with the provided code and verify that the three Bonsai endpoints function correctly:
 -	GET /api/bonsai - Retrieves all bonsai trees.
 -	GET /api/bonsai/{id} - Retrieves a specific bonsai tree.
@@ -47,30 +47,8 @@ ________________________________________
 -	You don’t need to write unit tests (unless required), but test your endpoints using a web browser, Postman, or built-in Swagger pages.
 -	Verify that your algorithmic methods work correctly (e.g., checking if filtering or sorting returns the correct results).
 ________________________________________
-## Example Ideas
-Here are some example domains for inspiration:
-**Recipe Management**
--	Classes: Recipe (base), Ingredient, CookingStep
--	Algorithms:
--	Filter recipes based on cooking time or difficulty.
--	Search for recipes that contain specific ingredients.
--	Scale ingredient amounts for different portions.
--	Endpoints:
--	GET /recipes
--	GET /recipes/search
--	POST /recipes
-________________________________________
-**Workout System**
--	Classes: Workout (base), CardioWorkout, StrengthWorkout, Exercise
--	Algorithms:
--	Calculate total workout duration and calorie burn.
--	Filter exercises by muscle group.
--	Sort workouts by intensity level.
--	Endpoints:
--	GET /workouts
--	GET /workouts/muscle-group/{group}
--	POST /workouts
-________________________________________
+## Example Idea
+
 **Game Character Management**
 -	Classes: Character (base), Warrior, Mage, Equipment, Skill
 -	Algorithms:
@@ -82,29 +60,8 @@ ________________________________________
 -	GET /characters/class/{class}
 -	POST /characters
 ________________________________________
-**Plant Management**
--	Classes: Plant (base), IndoorPlant, OutdoorPlant, WateringSchedule
--	Algorithms:
--	Calculate the next watering date.
--	Filter plants by care difficulty.
--	Sort by health status or water requirements.
--	Endpoints:
--	GET /plants
--	GET /plants/care-level/{level}
--	POST /plants
-________________________________________
-**Movie Library**
--	Classes: Movie (base), Review, Director, Genre
--	Algorithms:
--	Calculate the average rating.
--	Filter movies by genre or release year.
--	Sort by rating or release date.
--	Endpoints:
--	GET /movies
--	GET /movies/genre/{genre}
--	POST /movies
-________________________________________
-Key Concepts Demonstrated
+**Key Concepts Demonstrated**
+
 Each of these examples allows you to showcase:
 -	Inheritance and/or Composition
 -	Encapsulation of Data
@@ -112,7 +69,8 @@ Each of these examples allows you to showcase:
 -	REST API Design
 -	(Optional) Dependency Injection
 ________________________________________
-Final Submission
+## Final Submission
+
 1. **Code Submission**
 Submit your solution via a GitHub repository link.
 -	Comment your code to explain your thought process.
