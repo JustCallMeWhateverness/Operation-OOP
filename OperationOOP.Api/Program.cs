@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Options;
 using OperationOOP.Api.Endpoints;
 using OperationOOP.Core.Data;
+using OperationOOP.Core.Services;
 
 namespace OperationOOP.Api
 {
@@ -23,6 +24,7 @@ namespace OperationOOP.Api
             });
 
             builder.Services.AddSingleton<IDatabase, Database>();
+            builder.Services.AddSingleton<ICharacterService, CharacterService>();
 
             var app = builder.Build();
 

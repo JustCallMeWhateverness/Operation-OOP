@@ -19,8 +19,14 @@ public class GetCharacter : IEndpoint
     private static Response Handle([AsParameters] Request request, IDatabase db)
     {
         var character = db.Characters.Find(character => character.Id == request.Id);
+        //Check for if the chracter is null
+        if (character == null)
+        {
+            //If character is not found
+            throw new Exception("Character not found.");
 
-        // map character to response dto
+        }
+
         var response = new Response(
             Id: character.Id,
             Name: character.Name,

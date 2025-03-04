@@ -17,5 +17,5 @@ public class FilterCharacters : IEndpoint
                 ? Results.Ok(filteredCharacters)
                 : Results.NotFound($"No characters found for type '{type}'");
         })
-        .WithSummary("Filter characters by predefined types (warrior, mage, archer)");
+        .WithSummary("Filter characters by type (warrior, mage, archer)");
 }
