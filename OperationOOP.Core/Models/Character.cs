@@ -1,7 +1,7 @@
 using OperationOOP.Core.Interfaces;
 
 namespace OperationOOP.Core.Models;
-
+//Bas class that inherits from IEntity
 public abstract class Character : IEntity
 {
     public int Id { get; set; }

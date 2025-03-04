@@ -6,7 +6,7 @@ public class Createcharacter : IEndpoint
         .WithSummary("Create new character");
 
     public record Request(
-  int Id,
+        int Id,
         string Name,
         string Type,
         int Level
@@ -17,11 +17,11 @@ public class Createcharacter : IEndpoint
     private static IResult Handle(Request request, IDatabase db)
     {
         if (string.IsNullOrWhiteSpace(request.Name))
-            return Results.BadRequest("Name cannot be empty.");
+            return Results.BadRequest("Name cannot be empty."); //Check for empty name
 
         Character character;
 
-        switch (request.Type.ToLower())
+        switch (request.Type.ToLower()) //Check for the type of character
         {
             case "warrior":
                 character = new Warrior(db.Characters.Count + 1, request.Name, request.Level);
@@ -33,7 +33,7 @@ public class Createcharacter : IEndpoint
                 character = new Archer(db.Characters.Count + 1, request.Name, request.Level);
                 break;
             default:
-                throw new Exception("Invalid character type!");
+                throw new Exception("Invalid character type!"); //If the type is not found
         }
 
         db.Characters.Add(character);

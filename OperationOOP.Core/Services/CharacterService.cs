@@ -2,7 +2,7 @@ using OperationOOP.Core.Models;
 
 namespace OperationOOP.Core.Services
 {
-    public interface ICharacterService
+    public interface ICharacterService 
     {
          List<Character> GetAllCharacters();
         List<Character> GetCharactersByLevel(int minLevel);
@@ -11,7 +11,7 @@ namespace OperationOOP.Core.Services
     }
     public class CharacterService : ICharacterService
     {
-        private List<Character> _characters = new List<Character>();
+        private List<Character> _characters = new List<Character>(); 
 
         public List<Character> GetAllCharacters()
         {
