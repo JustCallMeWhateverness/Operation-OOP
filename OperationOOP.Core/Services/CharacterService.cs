@@ -30,7 +30,7 @@ namespace OperationOOP.Core.Services
 
         public List<Equipment> GetSortedEquipment()
         {
-            return _characters.SelectMany(c => c.Equipment).OrderByDescending(e => e.Type).ToList();
+            return _characters.SelectMany(c => c.Equipment).OrderByDescending(e => e.Classification).ToList();
         }
     }
 }
