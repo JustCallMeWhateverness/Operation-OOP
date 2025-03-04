@@ -4,11 +4,11 @@ namespace OperationOOP.Core.Data
 {
     public interface IDatabase
     {
-        List<Bonsai> Bonsais { get; set; }
+        List<Character> Characters { get; set; }
     }
 
     public class Database : IDatabase
     {
-        public List<Bonsai> Bonsais { get; set; } = new List<Bonsai>();
+        public List<Character> Characters { get; set; } = new List<Character>();
     }
 }
