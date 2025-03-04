@@ -10,12 +10,15 @@ public class Createcharacter : IEndpoint
         string Name,
         string Type,
         int Level
-        
+
         );
     public record Response(int id);
 
-    private static Ok<Response> Handle(Request request, IDatabase db)
+    private static IResult Handle(Request request, IDatabase db)
     {
+        if (string.IsNullOrWhiteSpace(request.Name))
+            return Results.BadRequest("Name cannot be empty.");
+
         Character character;
 
         switch (request.Type.ToLower())
@@ -35,6 +38,6 @@ public class Createcharacter : IEndpoint
 
         db.Characters.Add(character);
 
-        return TypedResults.Ok(new Response(character.Id));
+        return Results.Ok(new Response(character.Id));
     }
 }

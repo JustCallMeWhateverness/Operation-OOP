@@ -16,7 +16,7 @@ public class GetCharacter : IEndpoint
         int Defense
     );
 
-    private static Response Handle([AsParameters] Request request, IDatabase db)
+    private static IResult Handle([AsParameters] Request request, IDatabase db)
     {
         var character = db.Characters.Find(character => character.Id == request.Id);
 
@@ -24,7 +24,7 @@ public class GetCharacter : IEndpoint
         if (character == null)
         {
             //If character is not found
-            throw new Exception("Character not found.");
+            return Results.NotFound("Character not found.");
 
         }
 
@@ -37,6 +37,6 @@ public class GetCharacter : IEndpoint
             Defense: character.Defense
             );
 
-        return response;
+        return Results.Ok(response);
     }
 }
