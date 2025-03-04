@@ -1,6 +1,6 @@
 using OperationOOP.Core.Interfaces;
 
-public class Equipment : IEntity
+public class Equipment : IEntity //Composition, implements IEntity
 {
     public int Id { get; set; }
     public string Name { get; set; }
@@ -10,6 +10,6 @@ public class Equipment : IEntity
     {
         Id = id;
         Name = name;
-        Classification = classification;
+        Classification = classification; //Armor, Weapon, Accessory
     }
 }

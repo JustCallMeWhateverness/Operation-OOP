@@ -1,7 +1,7 @@
 using OperationOOP.Core.Interfaces;
 
 namespace OperationOOP.Core.Models;
-//Bas class that inherits from IEntity
+//Bas class that inherits from IEntit
 public abstract class Character : IEntity
 {
     public int Id { get; set; }
@@ -10,7 +10,7 @@ public abstract class Character : IEntity
     public int Health { get; set; }
     public int Attack { get; set; }
     public int Defense { get; set; }
-    public List<Equipment> Equipment { get; set; } 
+    public List<Equipment> Equipment { get; set; } //Composition, List of Equipment
 
     public Character(int id, string name, int level, int health, int attack, int defense)
     {
