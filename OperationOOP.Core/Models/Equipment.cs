@@ -2,12 +2,13 @@ using OperationOOP.Core.Interfaces;
 
 public class Equipment : IEntity
 {
+    public int Id { get; set; }
     public string Name { get; set; }
     public string Classification { get; set; }
-    public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-    public Equipment(string name, string classification)
+    
+    public Equipment(int id, string name, string classification)
     {
+        Id = id;
         Name = name;
         Classification = classification;
     }
